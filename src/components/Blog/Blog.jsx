@@ -1,6 +1,7 @@
 import { FaBookmark } from 'react-icons/fa';
+import Bookmarks from '../Bookmarks/Bookmarks';
 
-const Blog = ({blog}) => {
+const Blog = ({blog, handleBookmarksBlogs}) => {
     const {id, cover, title, author_img, author, posted_date, reading_time, hashtags} = blog;
 
     return (
@@ -16,7 +17,7 @@ const Blog = ({blog}) => {
                 </div>
                 <div className='flex justify-between gap-2 items-center'>
                     <p><span>{reading_time}</span> min read</p>
-                    <button><FaBookmark/></button>
+                    <button onClick={() =>handleBookmarksBlogs(blog)}><FaBookmark/></button>
                 </div>
             </div>
             <h3 className="text-4xl font-bold my-7">{title}</h3>
